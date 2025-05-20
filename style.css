@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 167, 98, 1.00); /* Green */
+    margin: 0;
+}
+
+
+.shadow{
+  diplay: grid;
+  grid-template-columns: repeat(3, 1fr); /* Dynamic sizing */
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    background-color: black
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Dynamic sizing */
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    width: 300px; /* Fixed overall board size */
+    height: 300px; /* Matches the width for a square board */
+}
+
+.cell {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Scales with container */
+    cursor: pointer;
+    border: 1px solid #333;
+    color: white; /* Contrast against green */
+    user-select: none;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cell:hover {
+    background-color: rgba(200, 200, 200, 0.9); /* Subtle hover color */
+}
+
+.cell:active {
+    background-color: #ccc; /* Feedback when clicked */
+}
+
+@media (max-width: 600px) {
+    .board {
+        width: 90%; /* Scale down for smaller screens */
+        height: auto; /* Maintain square cells */
+    }
+    .cell {
+        font-size: 1.5rem; /* Adjust text size */
+    }
+}
